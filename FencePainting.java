@@ -1,42 +1,36 @@
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * FencePainting
  */
+
 public class FencePainting {
     public static void main(String[] args) throws IOException {
-        File fileIn = new File("paint.in");
-        Scanner scnr = new Scanner(fileIn);
+        BufferedReader br = new BufferedReader(new FileReader("paint.in"));
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("paint.out")));
 
-        String[][] array = new String[2][2];
-        int lineNum = 0;
-        while (scnr.hasNextLine()) {
-            String line = scnr.nextLine();
-            String[] lineSplit = line.split(" ", 0);
-            array[lineNum] = lineSplit;
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        int c = Integer.parseInt(st.nextToken());
+        int d = Integer.parseInt(st.nextToken());
+
+        if (b <= c || a >= d) {
+            pw.println(b+d-a-c);
+        } else if (b >= d && a <= c) {
+            pw.println(b-a);
+        } else if (b <= d && a >= c) {
+            pw.println(d-c);
+        } else if (a <= c && c <= b && b <= d) {
+            pw.println(d-a);
+        } else if (c <= a && a <= d && d <= b) {
+            pw.println(b-c);
         }
 
-        scnr.close();
-
-        int a = Integer.parseInt(array[0][0]);
-        int b = Integer.parseInt(array[0][1]);
-        int c = Integer.parseInt(array[1][0]);
-        int d = Integer.parseInt(array[1][1]);
-
-        FileWriter fileOut = new FileWriter("paint.out");
-        if (b < c | a > d) {
-            fileOut.write((b+c-a-d) + "\n");
-        } else if (b > d & a < c) {
-            fileOut.write((b-a) + "\n");
-        } else if (b < d & a > c) {
-            fileOut.write((d-c) + "\n");
-        } else if ((c < b & b < d) & a < c) {
-            fileOut.write((d-a) + "\n");
-        } else if ((a < d & d < b) & c < a) {
-            fileOut.write((b-c) + "\n");
-        }
-
-        fileOut.close();
+        br.close();
+        pw.close();
     }
 }
