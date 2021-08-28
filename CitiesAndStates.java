@@ -3,6 +3,7 @@ import java.util.*;
 
 /**
  * CitiesAndStates
+ * Solution inspired by official solution
  */
 public class CitiesAndStates {
     public static void main(String[] args) throws IOException {
