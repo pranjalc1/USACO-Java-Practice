@@ -26,8 +26,6 @@ public class WhyCowCrossRoadIII {
 
         int cow = 0;
         int timeNow = 0;
-        int timeAfter1 = 0;
-        int timeAfter2 = 0;
 
         while (cow < N) {
             timeNow = Integer.max(timeNow, timeAndDuration[cow][0]);

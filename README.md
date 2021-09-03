@@ -1,2 +1,2 @@
 # USACO-Java-Practice
-My Java solutions to problems from USACO.
+My Java solutions to problems from USA Computing Olympiad (USACO).
