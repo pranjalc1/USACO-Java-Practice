@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Hoofball
+ * Hoofball1
  * Runtime/memory limit exceeded with this solution (with 1 wrong test case)
  */
 public class Hoofball1 {
